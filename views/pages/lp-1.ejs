@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%- include ("../partials/header-lp-1.ejs") %>
+</head>
+
+<body>
+  <%- include ("../partials/hero-2.ejs") %>
+  <%- include ("../partials/lp-1.ejs") %>
+  <%- include ("../partials/results-lp-1.ejs") %>
+  <%- include ("../partials/contact.ejs") %>
+
+
+  <!-- AOS -->
+  <script src="js/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    AOS.init({
+    });
+  </script>
+
+  <script type="text/javascript">
+      if (/Android|webOS|iPhone|iPad|iPod|pocket|psp|kindle|avantgo|blazer|midori|Tablet|Palm|maemo|plucker|phone|BlackBerry|symbian|IEMobile|mobile|ZuneWP7|Windows Phone|Opera Mini/i.test(navigator.userAgent)){
+      window.onload = function (){
+          document.getElementById('ebook-image-web-1').style.display = 'none';
+          document.getElementById('ebook-image-web-2').style.display = 'none';
+          document.getElementById('ebook-image-mobile-1').style.display = 'block';
+          document.getElementById('ebook-image-mobile-2').style.display = 'block';
+      }
+  };
+  
+  window.onload = function (){
+      const form = document.getElementById('myForm');
+      const submitButton = document.getElementById('submitButton');
+
+      // Attach an event listener to the button
+      submitButton.addEventListener('click', function(event) {
+          // Prevent the default form submission
+          event.preventDefault();
+          var name = document.getElementById("name").value;
+          var message = document.getElementById("message").value;
+
+          if(name!= undefined && name != '' && name != null && message!= undefined && message != '' && message != null)
+          {
+              var whatsappMessage = 'Oi! Meu nome é: '+name+'. '+message;
+              var url = 'https://api.whatsapp.com/send/?phone=5516992379412&text='+whatsappMessage+'&type=phone_number&app_absent=0'
+              window.location.href = url;
+          }
+          else
+          {
+              alert('Por favor, preencha seu nome e mensagem.');
+          }
+
+          
+      });
+  }
+  </script>
+</body>
+
+<footer>
+  <%- include ("../partials/footer.ejs") %>
+</footer>
+</html>

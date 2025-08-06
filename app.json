@@ -1,0 +1,8 @@
+{
+  "name": "LP - Bem que se come",
+  "description": "Landing page da página do bem que se come",
+  "repository": "https://github.com/heroku/node-js-getting-started",
+  "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/main/public/node.svg",
+  "keywords": ["node", "express", "heroku"],
+  "image": "heroku/nodejs"
+}
